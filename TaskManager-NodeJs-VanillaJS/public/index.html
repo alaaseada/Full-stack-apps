@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Task Manager</h1>
+      </header>
+      <section>
+        <form onsubmit="add_task(event)">
+          <input class="form-input" type="text" name="title" id="title" />
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </section>
+      <section id="task_list"></section>
+    </main>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
