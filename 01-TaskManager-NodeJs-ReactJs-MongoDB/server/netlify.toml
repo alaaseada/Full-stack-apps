@@ -1,3 +1,7 @@
+[build]
+  publish = "dist"
+  command = "echo Building functions"
+  functions = "netlify/functions/
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
