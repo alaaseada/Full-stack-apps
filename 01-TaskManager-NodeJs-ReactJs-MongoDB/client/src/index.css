@@ -1,0 +1,136 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+main {
+  margin: 30px auto;
+  min-width: 450px;
+  max-width: 80vw;
+}
+
+header {
+  text-align: center;
+  margin: 30px;
+  color: hotpink;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.edit-form {
+  box-shadow: 20px 5px 50px lightgrey;
+  padding: 30px;
+}
+label {
+  min-width: 50px;
+  padding: 0px 5px;
+}
+.form-row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.form-input,
+.title {
+  flex-grow: 2;
+  text-transform: capitalize;
+}
+.form-input {
+  padding: 5px 10px;
+  border: 1px solid lightgrey;
+  caret-color: hotpink;
+  outline: none;
+}
+
+.special {
+  box-shadow: 20px 5px 10px lightgrey;
+  border-radius: 5px 0 0 5px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.btn,
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn {
+  background-color: hotpink;
+  color: white;
+  box-shadow: 5px 5px 10px lightgrey;
+  border-radius: 5px;
+}
+.adjacent {
+  border-radius: 0 5px 5px 0;
+}
+.action-btn {
+  background-color: transparent;
+  color: black;
+}
+.btn:hover {
+  background-color: rgba(255, 105, 180, 0.7);
+}
+.action-btn:hover {
+  color: rgba(0, 0, 0, 0.544);
+}
+.loading {
+  width: 80px;
+  height: 80px;
+  border: 5px solid rgb(234, 233, 233);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-color: hotpink;
+  animation: spin 5s linear infinite;
+  margin: 0 auto;
+}
+p.center {
+  text-align: center;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
