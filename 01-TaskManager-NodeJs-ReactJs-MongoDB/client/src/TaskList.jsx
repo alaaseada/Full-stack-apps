@@ -2,8 +2,8 @@ import { useGetAllTasks } from './QueryHooks'
 import Task from './Task'
 
 const TaskList = () => {
-  const { isPending, data, isError, error } = useGetAllTasks()
-  if (isPending) {
+  const { isLoading, data, isError, error } = useGetAllTasks()
+  if (isLoading) {
     return <div className="loading"></div>
   }
   if (isError) {

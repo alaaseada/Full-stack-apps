@@ -3,7 +3,7 @@ import customAxios from './customAxios'
 import { toast } from 'react-toastify'
 
 export const useGetAllTasks = () => {
-  const { isPending, isError, data, error } = useQuery({
+  const { isLoading, isError, data, error } = useQuery({
     queryKey: ['allTasks'],
     queryFn: async () => {
       const { data } = await customAxios.get('/')
@@ -11,7 +11,7 @@ export const useGetAllTasks = () => {
     },
   })
   return {
-    isPending,
+    isLoading,
     isError,
     data,
     error,
