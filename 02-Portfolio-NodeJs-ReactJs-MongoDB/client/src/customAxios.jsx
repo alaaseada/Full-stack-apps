@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const portfolioAxios = axios.create({
-  baseURL: 'http://localhost:5000/api/v1/',
+  baseURL: 'https://alaa-webdev-portfolio-api.netlify.app/api/v1',
 })
