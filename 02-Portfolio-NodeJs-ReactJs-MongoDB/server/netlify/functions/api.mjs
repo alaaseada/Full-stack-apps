@@ -1,3 +1,5 @@
+//const serverless = require('serverless-http')
+import serverless from 'serverless-http'
 //const express = require('express')
 import express from 'express'
 //const cors = require('cors')
