@@ -1,15 +1,15 @@
 //const express = require('express')
-import express from "express"
+import express from 'express'
 //const cors = require('cors')
-import cors from cors
+import cors from 'cors'
 //const helmet = require('helmet')
-import helmet from "helmet"
+import helmet from 'helmet'
 //const compression = require('compression')
-import compression from "compression"
+import compression from 'compression'
 //const RateLimit = require('express-rate-limit')
-import RateLimit from "express-rate-limit"
+import RateLimit from 'express-rate-limit'
 //const { connectToDB } = require('./db/connect')
-import {connectToDB} from './db/connect'
+import { connectToDB } from './db/connect'
 //const project_router = require('./routes/projects')
 import project_router from './routes/projects'
 //const skills_router = require('./routes/skills')
