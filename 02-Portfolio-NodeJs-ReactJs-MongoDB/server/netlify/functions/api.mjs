@@ -24,13 +24,9 @@ app.use(express.json())
 app.use('/api/v1/projects', project_router)
 app.use('/api/v1/skills', skills_router)
 
-const start = () => {
+const start = async () => {
   try {
-    connectToDB()
-    console.log('Successfully connected to the database...')
-    app.listen(port, () => {
-      console.log(`server is listening on port ${port}`)
-    })
+    await connectToDB()
   } catch (error) {
     console.error('An error occured', error)
   }
