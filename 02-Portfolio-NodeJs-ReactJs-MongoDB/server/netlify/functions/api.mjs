@@ -9,11 +9,11 @@ import compression from 'compression'
 //const RateLimit = require('express-rate-limit')
 import RateLimit from 'express-rate-limit'
 //const { connectToDB } = require('./db/connect')
-import { connectToDB } from './db/connect'
+import { connectToDB } from '../../db/connect'
 //const project_router = require('./routes/projects')
-import project_router from './routes/projects'
+import project_router from '../../routes/projects'
 //const skills_router = require('./routes/skills')
-import skills_router from './routes/skills'
+import skills_router from '../../routes/skills'
 
 require('dotenv').config()
 
