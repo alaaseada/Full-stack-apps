@@ -5,7 +5,7 @@ const {
   getOneSkill,
   updateSkill,
   deleteSkill,
-} = require('../controllers/Skills')
+} = require('../controllers/skills')
 const Router = express.Router()
 
 Router.route('/').get(getAllSkills).post(addSkill)
