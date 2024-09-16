@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .full-h-center {
+    @apply h-screen flex flex-col items-center justify-center;
+  }
+  .align-element {
+    @apply mx-auto max-w-[72rem] px-8;
+  }
+}
+[data-theme='dracula'] .iti__dropdown-content {
+  --iti-border-color: #5b5b5b;
+  --iti-dialcode-color: #999999;
+  --iti-dropdown-bg: #0d1117;
+  --iti-arrow-color: #aaaaaa;
+  --iti-hover-color: #30363d;
+  --iti-path-globe-1x: url('path/to/globe_light.webp');
+  --iti-path-globe-2x: url('path/to/globe_light@2x.webp');
+}
+.Toastify__toast-container--top-center {
+  width: fit-content !important;
+}
