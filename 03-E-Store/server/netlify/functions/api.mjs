@@ -1,22 +1,22 @@
-const serverless = require('serverless-http')
-const express = require('express')
-const cors = require('cors')
-const connectToDB = require('./db/connectdb')
-require('express-async-errors')
-const { productsRouter, authRouter, ordersRouter } = require('./routes')
-const NotFound = require('./middleware/not-found')
-const { errorHandler } = require('./middleware/errors')
-const authenticateUser = require('./middleware/authentication')
-const { doPayment } = require('./controllers/orders')
-const xssClean = require('xss-clean')
-const mongoSanitize = require('express-mongo-sanitize')
-const helmet = require('helmet')
-const rateLimit = require('express-rate-limit')
+import serverless from 'serverless-http'
+import express, { json } from 'express'
+import cors from 'cors'
+import connectToDB from './db/connectdb'
+import 'express-async-errors'
+import { productsRouter, authRouter, ordersRouter } from './routes'
+import NotFound from './middleware/not-found'
+import { errorHandler } from './middleware/errors'
+import authenticateUser from './middleware/authentication'
+import { doPayment } from './controllers/orders'
+import xssClean from 'xss-clean'
+import mongoSanitize from 'express-mongo-sanitize'
+import helmet from 'helmet'
+import rateLimit from 'express-rate-limit'
 
 const app = express()
 
 app.set('trust proxy', 1)
-app.use(express.json())
+app.use(json())
 app.use(cors())
 app.use(xssClean())
 app.use(helmet())
