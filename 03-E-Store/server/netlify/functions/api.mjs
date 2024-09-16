@@ -44,4 +44,4 @@ const start = async () => {
 }
 start()
 
-const handler = serverless(app)
+export const handler = serverless(app)
