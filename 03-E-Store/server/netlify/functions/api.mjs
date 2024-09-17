@@ -12,6 +12,7 @@ import xssClean from 'xss-clean'
 import mongoSanitize from 'express-mongo-sanitize'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
+import { homePageHTML } from '../../utils'
 
 const app = express()
 
@@ -32,14 +33,9 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/products', productsRouter)
 app.use('/api/v1/orders', authenticateUser, ordersRouter)
 app.post('/api/v1/payment', doPayment)
-// app.get('/', (req, res) => {
-//   res.send(
-//     `<h1>Welcome to our E-store API</h1>
-//     <p>For products use: /api/v1/products</p>
-//     <p>For orders use: /api/v1/orders</p>
-//     <p>For authentication use: /api/v1/auth</p>`
-//   )
-// })
+app.get('/', (req, res) => {
+  res.send(homePageHTML)
+})
 app.use(NotFound)
 app.use(errorHandler)
 

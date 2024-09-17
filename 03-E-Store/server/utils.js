@@ -106,4 +106,18 @@ const stringifyShoppingList = (list) => {
   return orderedList.join('\n')
 }
 
-module.exports = { buildProductsQuery, stringifyShoppingList, formatPrice }
+const homePageHTML = `<div style='width:600px;margin:0 auto;'>
+    <h1 style='text-align:center'>Welcome to our E-store API</h1style=text-align:center></h1>
+    <div style='margin:0 auto;'>
+    <h3 style='text-decoration:underline'>Endpoints</h3>
+    <ul>
+    <li><strong>products</strong>: <a href='https://alaaseada-estore-api.netlify.app/api/v1/products'>https://alaaseada-estore-api.netlify.app/api/v1/products</a></li>
+    <li><strong>orders</strong>: <a href='https://alaaseada-estore-api.netlify.app/api/v1/orders'>https://alaaseada-estore-api.netlify.app/api/v1/orders</a></li>
+    <li><strong>authentication</strong>:<a href='https://alaaseada-estore-api.netlify.app/api/v1/auth'>https://alaaseada-estore-api.netlify.app/api/v1/auth</a></li></div></div>`
+
+module.exports = {
+  buildProductsQuery,
+  stringifyShoppingList,
+  formatPrice,
+  homePageHTML,
+}
