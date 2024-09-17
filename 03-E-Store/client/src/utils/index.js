@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+//https:alaaseada-estore-api.netlify.app/api/v1
 export const comfyAxios = axios.create({
-  baseURL: 'https://alaaseada-estore-api.netlify.app/api/v1',
+  baseURL: 'http://localhost:5000/api/v1',
 })
 
 export const formatPrice = (price) => {

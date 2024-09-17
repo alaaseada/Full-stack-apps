@@ -19,7 +19,7 @@ export const loader = (store, queryClient) => {
       const queryParams = Object.fromEntries(
         new URL(request.url).searchParams.entries()
       )
-      let { limit = 5, page = 1 } = queryParams
+      let { limit = 10, page = 1 } = queryParams
       const {
         data: { orders, meta },
       } = await queryClient.ensureQueryData({
@@ -53,14 +53,20 @@ export const loader = (store, queryClient) => {
 }
 
 const Orders = () => {
-  const { orders } = useLoaderData()
+  const {
+    orders,
+    meta: {
+      pagination: { total },
+    },
+  } = useLoaderData()
   const [orderItems, setOrderItems] = useState(null)
 
   return (
     <div className="overflow-x-auto">
       <div className="border-b border-base-300 pb-5 flex justify-between">
         <h2 className="text-3xl font-medium tracking-wider capitalize">
-          Your Orders
+          Your Orders{' '}
+          <span className="text-sm tracking-widest">(Total: {total})</span>
         </h2>
         <PageLimiter collection_name={'orders'} />
       </div>

@@ -4,7 +4,7 @@ const axios = require('axios')
 require('dotenv').config()
 
 const getAllOrders = async (req, res) => {
-  let { page = 1, limit = 5 } = req.query
+  let { page = 1, limit = 10 } = req.query
   const orders = await Order.find({ userId: { $eq: req.userId } })
   const totalOrders = orders.length
   const pagedOrders = await Order.find({ userId: { $eq: req.userId } })

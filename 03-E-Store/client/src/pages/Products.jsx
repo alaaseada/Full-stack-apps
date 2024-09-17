@@ -15,13 +15,14 @@ export const loader = (queryClient) => {
       company = 'all',
       shipping = false,
       page = 1,
+      limit = 10,
     } = params
     const {
       data: { data: products, meta },
     } = await queryClient.ensureQueryData({
       queryKey: [
         'products',
-        { search, price, order, category, company, shipping, page },
+        { search, price, order, category, company, shipping, page, limit },
       ],
       queryFn: () => comfyAxios.get(`/products`, { params }),
     })

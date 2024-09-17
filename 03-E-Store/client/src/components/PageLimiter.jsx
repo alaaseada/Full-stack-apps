@@ -3,7 +3,7 @@ import { constructURL } from '../utils'
 
 const PageLimiter = ({ collection_name }) => {
   const { params } = useLoaderData()
-  let { limit = 5 } = params
+  let { limit = 10 } = params
   const navigate = useNavigate()
 
   let baseLimitingURL = constructURL(`/${collection_name}`, params, 'limit')
