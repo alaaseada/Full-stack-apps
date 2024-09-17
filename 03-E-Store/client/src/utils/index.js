@@ -1,7 +1,7 @@
 import axios from 'axios'
 
+// 'https://alaaseada-estore-api.netlify.app/api/v1'
 export const comfyAxios = axios.create({
-  // baseURL: 'https://strapi-store-server.onrender.com/api',
   baseURL: 'http://localhost:5000/api/v1',
 })
 

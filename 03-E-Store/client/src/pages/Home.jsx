@@ -7,7 +7,7 @@ export const loader = (queryClient) => {
     const {
       data: { data: products },
     } = await queryClient.ensureQueryData({
-      queryKey: 'featured',
+      queryKey: ['featured'],
       queryFn: () => comfyAxios.get('/products?featured=true'),
     })
     return { products }
