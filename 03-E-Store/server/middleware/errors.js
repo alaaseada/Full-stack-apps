@@ -9,9 +9,8 @@ class CustomError extends Error {
 }
 
 const errorHandler = (error, req, res, next) => {
-  console.log(error)
   const customError = {
-    status: error.status || StatusCodes.INTERNAL_SERVER_ERROR,
+    status: error.status ?? StatusCodes.INTERNAL_SERVER_ERROR,
     message: '',
   }
   if (error.name === 'ValidationError') {
@@ -31,9 +30,14 @@ const errorHandler = (error, req, res, next) => {
     customError.message = error.text
     customError.status = error.status
   }
+  if (error.name === 'CastError') {
+    customError.status = StatusCodes.BAD_REQUEST
+    customError.message = `Invalid ${error.path}`
+  }
+  console.log(customError.message)
   return res
     .status(customError.status)
-    .json({ msg: customError.message || error.message })
+    .json({ msg: customError.message || error.message }) //
 }
 
 module.exports = { CustomError, errorHandler }

@@ -27,7 +27,17 @@ const loginUser = async (req, res) => {
 }
 
 const getUserById = async (req, res) => {
-  const user = {}
-  return res.status().json({ user })
+  let { _id } = req.params
+  if (!_id)
+    throw new CustomError(
+      'No Id was provided in the URL',
+      StatusCodes.BAD_REQUEST
+    )
+  const user = await User.findById(_id)
+  if (!user)
+    throw new CustomError(`No user with ID= ${_id}`, StatusCodes.UNAUTHORIZED)
+  return res
+    .status(StatusCodes.OK)
+    .json({ username: user.username, email: user.email })
 }
 module.exports = { loginUser, registerUser, getUserById }

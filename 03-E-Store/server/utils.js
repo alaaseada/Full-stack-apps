@@ -113,7 +113,7 @@ const homePageHTML = `<div style='width:600px;margin:0 auto;'>
     <ul>
     <li><strong>products</strong>: <a href='https://alaaseada-estore-api.netlify.app/api/v1/products'>https://alaaseada-estore-api.netlify.app/api/v1/products</a></li>
     <li><strong>orders</strong>: <a href='https://alaaseada-estore-api.netlify.app/api/v1/orders'>https://alaaseada-estore-api.netlify.app/api/v1/orders</a></li>
-    <li><strong>authentication</strong>:<a href='https://alaaseada-estore-api.netlify.app/api/v1/auth'>https://alaaseada-estore-api.netlify.app/api/v1/auth</a></li></div></div>`
+    <li><strong>authentication</strong>:<a href='https://alaaseada-estore-api.netlify.app/api/v1/auth'>https://alaaseada-estore-api.netlify.app/api/v1/auth/</a>login|register|:id</li></div></div>`
 
 module.exports = {
   buildProductsQuery,
