@@ -5,9 +5,8 @@ const { buildProductsQuery } = require('../utils')
 
 const getFilteredProducts = async (req, res) => {
   const { query, sort, fieldList, page, limit } = buildProductsQuery(req)
-  // await Product.countDocuments(query, { limit: 10000 })
-  let allProducts = await Product.find(query)
-  let grandTotal = allProducts.length
+  //
+  let grandTotal = await Product.countDocuments(query, { limit: 10000 })
   let products = await Product.find(query)
     .collation({ locale: 'en' })
     .sort(sort)

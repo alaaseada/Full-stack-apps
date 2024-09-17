@@ -46,6 +46,7 @@ app.use(errorHandler)
 const start = async () => {
   try {
     await connectToDB()
+    console.log('connected')
   } catch (error) {
     console.log('An error occured', error)
   }
