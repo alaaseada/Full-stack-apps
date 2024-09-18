@@ -47,6 +47,7 @@ const Filters = () => {
         max={'100000'}
         className={'range range-secondary range-sm'}
         step={'100'}
+        defaultValue={price}
       />
       <CheckBox
         name={'shipping'}

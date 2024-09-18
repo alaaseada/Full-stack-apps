@@ -28,8 +28,15 @@ export const Selector = ({ name, label, values, className, defaultValue }) => {
   )
 }
 
-export const RangeSelector = ({ name, min, max, step, className }) => {
-  const [selectedLimit, setSelectedLimit] = useState(max)
+export const RangeSelector = ({
+  name,
+  min,
+  max,
+  step,
+  className,
+  defaultValue,
+}) => {
+  const [selectedLimit, setSelectedLimit] = useState(defaultValue)
   return (
     <div className="form-control">
       <div className="label">
@@ -44,7 +51,7 @@ export const RangeSelector = ({ name, min, max, step, className }) => {
         max={max}
         className={className}
         step={step}
-        defaultValue={selectedLimit}
+        defaultValue={defaultValue}
         onChange={(e) => setSelectedLimit(e.target.value)}
       />
       <div className="label">
