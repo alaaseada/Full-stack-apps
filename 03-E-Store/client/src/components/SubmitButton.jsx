@@ -6,7 +6,7 @@ const SubmitButton = ({ text }) => {
   return (
     <button
       type="submit"
-      className="btn btn-primary text-lg uppercase text-slate-200 py-2"
+      className="btn btn-primary uppercase text-slate-200 py-2"
       disabled={isSubmitting}
     >
       {isSubmitting ? (

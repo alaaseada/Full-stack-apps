@@ -48,42 +48,43 @@ const Login = () => {
   }
   return (
     <section className="full-h-center">
-      <Form method="POST" className="card bg-base-100 w-1/2 max-w-md shadow-xl">
-        <h1 className="text-4xl text-center mt-8 font-bold">Login</h1>
-        <div className="card-body">
-          <FormInput
-            type="email"
-            name="email"
-            placeholder="email"
-            icon={email}
-            className="my-2"
-          />
-          <FormInput
-            type="password"
-            name="password"
-            placeholder="password"
-            icon={key}
-            className="my-2"
-          />
-          <div className="mt-4 flex flex-col gap-3">
-            <SubmitButton text={'login'} />
-            <button
-              type="button"
-              className="btn btn-secondary text-lg uppercase"
-              onClick={loginAsGuest}
+      <Form
+        method="POST"
+        className="card w-96  p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
+      >
+        <h4 className="text-3xl text-center font-bold mb-4">Login</h4>
+        <FormInput
+          type="email"
+          name="email"
+          placeholder="email"
+          icon={email}
+          className="my-2"
+        />
+        <FormInput
+          type="password"
+          name="password"
+          placeholder="password"
+          icon={key}
+          className="my-2"
+        />
+        <div className="mt-4 flex flex-col gap-3">
+          <SubmitButton text={'login'} />
+          <button
+            type="button"
+            className="btn btn-secondary uppercase"
+            onClick={loginAsGuest}
+          >
+            Guest user
+          </button>
+          <p className="text-center mt-4">
+            Not a member yet?{' '}
+            <Link
+              className="link capitalize link-primary no-underline"
+              to="/register"
             >
-              Guest user
-            </button>
-            <p className="text-center mt-4 text-xl py-2">
-              Not a member yet?{' '}
-              <Link
-                className="link capitalize link-primary no-underline"
-                to="/register"
-              >
-                register
-              </Link>
-            </p>
-          </div>
+              register
+            </Link>
+          </p>
         </div>
       </Form>
     </section>
